@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SecondActivity">
+    <TextView
+        android:id="@+id/count_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/integ"
+        android:gravity="center"
+        android:textSize="60dp"
+        android:layout_margin="16dp"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start"
+        android:textAllCaps="true"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pause"
+        android:textAllCaps="true"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reset"
+        android:textAllCaps="true"
+        />
+
+
+</LinearLayout>

@@ -17,20 +17,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Input seconds"
-            android:inputType="textCapSentences"
+            android:inputType="number"
             android:textColor="@color/black"
             android:textColorHint="#575757"
             android:textSize="48dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/say_hello"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="say hello!"
+        android:layout_margin="10dp"
         android:textAllCaps="true"/>
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/send_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="send text"
         android:textAllCaps="true" />
 </LinearLayout>

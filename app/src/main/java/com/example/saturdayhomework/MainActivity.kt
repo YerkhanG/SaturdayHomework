@@ -22,15 +22,27 @@ class MainActivity : ComponentActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpsayHelloButton()
+        setUpSayHelloButton()
+        setUpSendTextButton()
     }
-    private fun setUpsayHelloButton(){
-        binding.inputMain.setOnClickListener{
+    private fun setUpSayHelloButton(){
+        binding.sayHello.setOnClickListener{
             if(isValid()){
                 val intent = Intent(this , SecondActivity::class.java)
-                intent.putExtra(ArgumentKey.NAME.name , binding.inputMain.text)
+                intent.putExtra(ArgumentKey.NAME.name , binding.inputMain.text.toString())
                 startActivity(intent)
-            }else Toast.makeText(this , "You need to input some number!" , Toast.LENGTH_SHORT)
+            }else Toast.makeText(this , "You need to input some number!" , Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun setUpSendTextButton(){
+        binding.sendText.setOnClickListener{
+            if(isValid()){
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.putExtra(Intent.EXTRA_TEXT, binding.inputMain.text.toString())
+                intent.type = "text/plain"
+                val chooseIntent = Intent.createChooser(intent,"Title")
+                startActivity(chooseIntent)
+            }else Toast.makeText(this , "You need to input some number!" , Toast.LENGTH_SHORT).show()
         }
     }
     private fun isValid() = !binding.inputMain.text.isNullOrBlank()
